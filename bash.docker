@@ -18,6 +18,7 @@ RUN dnf -y -q install https://yum.kaos.st/kaos-repo-latest.el8.noarch.rpm && \
     dnf -y install make wget git xz perfecto zsh && \
     wget https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz && \
     tar xf shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz && \
+    mv shellcheck-v${SHELLCHECK_VERSION}/shellcheck /usr/bin/ && rm -rf shellcheck-v${SHELLCHECK_VERSION} && \
     curl https://github.com/hadolint/hadolint/releases/download/v${HADOLINT_VERSION}/hadolint-Linux-x86_64 -o /usr/bin/hadolint && chmod +x /usr/bin/hadolint && \
     curl https://apps.kaos.st/shdoc/latest/linux/x86_64/shdoc -o /usr/bin/shdoc && chmod +x /usr/bin/shdoc && \
     wget https://andy.one/dotfiles/install.sh && bash install.sh && rm -f install.sh && \
