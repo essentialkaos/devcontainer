@@ -60,7 +60,7 @@ jobs:
       - name: Check if build/rebuild is required
         id: build_check
         run: |
-          if [[ "${{github.event_name}}" == "release" ]] ; then
+          if [[ "${{github.event_name}}" == "push" ]] ; then
             echo "build=true" >> $GITHUB_OUTPUT
             exit 0
           fi
